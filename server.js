@@ -20,9 +20,14 @@ app.use(cookieSession({
 
 function requireLogin(req, res, next) {
   if (req.session && req.session.loggedIn === true) return next();
+
   if (req.path.startsWith("/api/")) {
-    return res.status(401).json({ success: false, message: "로그인이 필요합니다." });
+    return res.status(401).json({
+      success: false,
+      message: "로그인이 필요합니다."
+    });
   }
+
   return res.redirect("/");
 }
 
@@ -30,16 +35,22 @@ app.get("/", (req, res) => {
   if (req.session && req.session.loggedIn === true) {
     return res.redirect("/restaurants");
   }
+
   return res.sendFile(path.join(__dirname, "public", "login.html"));
 });
 
 app.post("/login", (req, res) => {
   const password = String(req.body.password || "");
+
   if (password === process.env.SITE_PASSWORD) {
     req.session.loggedIn = true;
     return res.json({ success: true });
   }
-  return res.status(401).json({ success: false, message: "비밀번호가 올바르지 않습니다." });
+
+  return res.status(401).json({
+    success: false,
+    message: "비밀번호가 올바르지 않습니다."
+  });
 });
 
 app.get("/restaurants", requireLogin, (req, res) => {
@@ -48,8 +59,14 @@ app.get("/restaurants", requireLogin, (req, res) => {
 
 app.get("/api/data", requireLogin, (req, res) => {
   try {
-    const locations = JSON.parse(fs.readFileSync(path.join(__dirname, "locations.json"), "utf8"));
-    const restaurants = JSON.parse(fs.readFileSync(path.join(__dirname, "restaurants.json"), "utf8"));
+    const locations = JSON.parse(
+      fs.readFileSync(path.join(__dirname, "locations.json"), "utf8")
+    );
+
+    const restaurants = JSON.parse(
+      fs.readFileSync(path.join(__dirname, "restaurants.json"), "utf8")
+    );
+
     return res.json({
       success: true,
       updated_at: "2026-08-19",
@@ -58,7 +75,11 @@ app.get("/api/data", requireLogin, (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ success: false, message: "데이터를 불러오지 못했습니다." });
+
+    return res.status(500).json({
+      success: false,
+      message: "데이터를 불러오지 못했습니다."
+    });
   }
 });
 
@@ -69,4 +90,6 @@ app.post("/logout", (req, res) => {
 
 app.get("/health", (req, res) => res.status(200).send("OK"));
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

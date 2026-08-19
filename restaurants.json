@@ -4,389 +4,269 @@
     "group_size_min": 10,
     "name": "청담갈비",
     "representative_menu": "청담수제돼지갈비 / 소생갈비",
+    "distance_km": 0.4,
     "cost_per_person": "약 19,000~45,000원",
-    "phone": "0507-1422-9064",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 0.4
+    "phone": "0507-1422-9064"
   },
   {
     "location_id": "suwon_station",
     "group_size_min": 10,
     "name": "넓은뜰 한정식",
     "representative_menu": "넓은뜰밥상 / 특급밥상",
+    "distance_km": 0.7,
     "cost_per_person": "약 21,000~53,000원",
-    "phone": "031-296-5292",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 0.7
+    "phone": "031-296-5292"
   },
   {
     "location_id": "suwon_station",
     "group_size_min": 10,
     "name": "팔딱오리 수원본점",
     "representative_menu": "유황먹인 오리로스 / 매콤 오리주물럭",
+    "distance_km": 2.0,
     "cost_per_person": "약 22,000~28,000원",
-    "phone": "0507-1467-8852",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 2.0
+    "phone": "0507-1467-8852"
   },
   {
     "location_id": "suwon_station",
     "group_size_min": 10,
     "name": "평화정육식당",
     "representative_menu": "생삼겹살 / 한우등심",
+    "distance_km": 2.7,
     "cost_per_person": "약 13,000~35,000원",
-    "phone": "0507-1439-8299",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 2.7
+    "phone": "0507-1439-8299"
   },
   {
     "location_id": "suwon_station",
     "group_size_min": 10,
     "name": "고반가든 서수원점",
     "representative_menu": "고반 프리미엄 양념갈비 / 한돈 정식",
+    "distance_km": 3.0,
     "cost_per_person": "약 25,000~41,000원",
-    "phone": "0507-1349-8771",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 3.0
+    "phone": "0507-1349-8771"
   },
   {
     "location_id": "suwon_station",
     "group_size_min": 10,
     "name": "연포갈비",
     "representative_menu": "생갈비 / 갈비정식",
+    "distance_km": 3.3,
     "cost_per_person": "약 22,000~66,000원",
-    "phone": "031-255-1337",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 3.3
+    "phone": "031-255-1337"
   },
   {
     "location_id": "suwon_station",
     "group_size_min": 10,
     "name": "국보회관",
     "representative_menu": "수원 왕갈비 / 한돈 수제 돼지갈비",
+    "distance_km": 3.4,
     "cost_per_person": "약 18,000~45,000원",
-    "phone": "0507-1328-3613",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 3.4
+    "phone": "0507-1328-3613"
   },
   {
     "location_id": "suwon_station",
     "group_size_min": 10,
     "name": "바다예찬",
     "representative_menu": "스페셜 모둠 숙성회 / 물회",
+    "distance_km": 3.5,
     "cost_per_person": "약 20,000~45,000원",
-    "phone": "0507-1316-4446",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 3.5
+    "phone": "0507-1316-4446"
   },
   {
     "location_id": "suwon_station",
     "group_size_min": 10,
     "name": "달구운바람 수원권선점",
     "representative_menu": "직화 돼지양념구이",
+    "distance_km": 4.5,
     "cost_per_person": "약 17,000~22,000원",
-    "phone": "031-223-9192",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 4.5
+    "phone": "031-223-9192"
   },
   {
     "location_id": "suwon_station",
     "group_size_min": 10,
     "name": "우림본갈비",
     "representative_menu": "소생왕갈비 / 수제왕돼지갈비",
+    "distance_km": 5.8,
     "cost_per_person": "약 17,000~30,000원",
-    "phone": "031-243-0539",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 5.8
+    "phone": "031-243-0539"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "팔각도 이천하이닉스점",
     "representative_menu": "숯불 닭갈비",
+    "distance_km": 0.4,
     "cost_per_person": "약 15,000~25,000원",
-    "phone": "0507-1308-7590",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 0.4
+    "phone": "0507-1308-7590"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "똠팔이 이천본점",
     "representative_menu": "랍스터 / 대게 / 한우스테이크",
+    "distance_km": 0.4,
     "cost_per_person": "약 40,000~80,000원",
-    "phone": "0507-1357-0819",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 0.4
+    "phone": "0507-1357-0819"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "마약생고기 이천본점",
     "representative_menu": "마약생고기 / 마약생갈비",
+    "distance_km": 0.4,
     "cost_per_person": "약 16,000~30,000원",
-    "phone": "031-694-0665",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 0.4
+    "phone": "031-694-0665"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "육밀도 이천점",
     "representative_menu": "누룩숙성삼겹살 / 한우채끝등심",
+    "distance_km": 0.5,
     "cost_per_person": "약 17,000~49,000원",
-    "phone": "0507-1406-8083",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 0.5
+    "phone": "0507-1406-8083"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "뚱보집 하이닉스점",
     "representative_menu": "오겹살 / 삼겹살 / 꼬들살",
+    "distance_km": 0.7,
     "cost_per_person": "약 15,000~30,000원",
-    "phone": "0507-1304-1451",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 0.7
+    "phone": "0507-1304-1451"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "오봉집 이천하이닉스점",
     "representative_menu": "낙지볶음 / 보쌈 / 연포탕",
+    "distance_km": 0.8,
     "cost_per_person": "약 13,000~32,000원",
-    "phone": "031-633-1220",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 0.8
+    "phone": "031-633-1220"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "대진도원참치 이천하이닉스점",
     "representative_menu": "참치회 코스",
+    "distance_km": 0.8,
     "cost_per_person": "약 45,000~100,000원",
-    "phone": "0507-1419-4588",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 0.8
+    "phone": "0507-1419-4588"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "돈탑 이천하이닉스점",
     "representative_menu": "돼지고기구이",
+    "distance_km": 1.8,
     "cost_per_person": "약 10,000~20,000원",
-    "phone": "031-634-0987",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 1.8
+    "phone": "031-634-0987"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "닭사부일체 이천본점",
     "representative_menu": "묵은지 닭볶음탕",
+    "distance_km": 3.2,
     "cost_per_person": "약 17,000~30,000원",
-    "phone": "0507-1332-7357",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 3.2
+    "phone": "0507-1332-7357"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "엉구막창",
     "representative_menu": "막창 / 곱창구이",
+    "distance_km": 4.4,
     "cost_per_person": "약 15,000~30,000원",
-    "phone": "전화 확인 필요",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 4.4
+    "phone": "전화 확인 필요"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "쭌조개구이 본점",
     "representative_menu": "조개구이 / 가리비회",
+    "distance_km": 5.0,
     "cost_per_person": "약 25,000~50,000원",
-    "phone": "031-634-4191",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 5.0
+    "phone": "031-634-4191"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "원이쌀밥",
     "representative_menu": "원이정식 / 이천쌀밥 한정식",
+    "distance_km": 5.2,
     "cost_per_person": "약 20,000~55,000원",
-    "phone": "0507-1464-1645",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 5.2
+    "phone": "0507-1464-1645"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "육탐미",
     "representative_menu": "숙성목살 / 양념삼겹살 / 갈비살",
+    "distance_km": 6.3,
     "cost_per_person": "약 15,900~28,900원",
-    "phone": "031-634-9295",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 6.3
+    "phone": "031-634-9295"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "이천 육식왕",
     "representative_menu": "돼지갈비 / 소갈비살",
+    "distance_km": 6.5,
     "cost_per_person": "약 18,000~35,000원",
-    "phone": "0507-1473-9799",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 6.5
+    "phone": "0507-1473-9799"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "야반 본점",
     "representative_menu": "고등어구이 정식 / 한우불고기 정식",
+    "distance_km": 6.7,
     "cost_per_person": "약 20,000~29,000원",
-    "phone": "031-633-9970",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 6.7
+    "phone": "031-633-9970"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "호운",
     "representative_menu": "생선구이 / 제육 정식",
+    "distance_km": 7.0,
     "cost_per_person": "약 18,000~20,000원",
-    "phone": "0507-1301-0136",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 7.0
+    "phone": "0507-1301-0136"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "임금님쌀밥집",
     "representative_menu": "이천쌀밥 한정식",
+    "distance_km": 7.2,
     "cost_per_person": "약 20,000~40,000원",
-    "phone": "031-632-3646",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 7.2
+    "phone": "031-632-3646"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "설봉산숯불닭갈비",
     "representative_menu": "숯불 닭갈비",
+    "distance_km": 7.4,
     "cost_per_person": "약 15,000~25,000원",
-    "phone": "031-633-1338",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 7.4
+    "phone": "031-633-1338"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "야반 프리미엄아울렛 이천점",
     "representative_menu": "황금보리굴비 정식 / 제육볶음 정식",
+    "distance_km": 8.8,
     "cost_per_person": "약 20,000~29,000원",
-    "phone": "031-887-4537",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 8.8
+    "phone": "031-887-4537"
   },
   {
     "location_id": "sk_hynix_icheon",
     "group_size_min": 10,
     "name": "이진상회",
     "representative_menu": "한식 / 베이커리·카페",
+    "distance_km": 9.5,
     "cost_per_person": "약 10,000~30,000원",
-    "phone": "070-8888-8882",
-    "address": "",
-    "latitude": null,
-    "longitude": null,
-    "coordinate_status": "pending",
-    "legacy_distance_km": 9.5
+    "phone": "070-8888-8882"
   }
 ]
