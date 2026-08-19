@@ -1,0 +1,72 @@
+[
+  {
+    "name": "청담갈비",
+    "representative_menu": "청담수제돼지갈비 / 소생갈비",
+    "radius_km": 0.4,
+    "cost_per_person": "약 19,000~45,000원",
+    "phone": "0507-1422-9064"
+  },
+  {
+    "name": "넓은뜰 한정식",
+    "representative_menu": "넓은뜰밥상 / 특급밥상",
+    "radius_km": 0.7,
+    "cost_per_person": "약 21,000~53,000원",
+    "phone": "031-296-5292"
+  },
+  {
+    "name": "팔딱오리 수원본점",
+    "representative_menu": "유황먹인 오리로스 / 매콤 오리주물럭",
+    "radius_km": 2.0,
+    "cost_per_person": "약 22,000~28,000원",
+    "phone": "0507-1467-8852"
+  },
+  {
+    "name": "평화정육식당",
+    "representative_menu": "생삼겹살 / 한우등심",
+    "radius_km": 2.7,
+    "cost_per_person": "약 13,000~35,000원",
+    "phone": "0507-1439-8299"
+  },
+  {
+    "name": "고반가든 서수원점",
+    "representative_menu": "고반 프리미엄 양념갈비 / 한돈 정식",
+    "radius_km": 3.0,
+    "cost_per_person": "약 25,000~41,000원",
+    "phone": "0507-1349-8771"
+  },
+  {
+    "name": "연포갈비",
+    "representative_menu": "생갈비 / 갈비정식",
+    "radius_km": 3.3,
+    "cost_per_person": "약 22,000~66,000원",
+    "phone": "031-255-1337"
+  },
+  {
+    "name": "국보회관",
+    "representative_menu": "수원 왕갈비 / 한돈 수제 돼지갈비",
+    "radius_km": 3.4,
+    "cost_per_person": "약 18,000~45,000원",
+    "phone": "0507-1328-3613"
+  },
+  {
+    "name": "바다예찬",
+    "representative_menu": "스페셜 모둠 숙성회 / 물회",
+    "radius_km": 3.5,
+    "cost_per_person": "약 20,000~45,000원",
+    "phone": "0507-1316-4446"
+  },
+  {
+    "name": "달구운바람 수원권선점",
+    "representative_menu": "직화 돼지양념구이",
+    "radius_km": 4.5,
+    "cost_per_person": "약 17,000~22,000원",
+    "phone": "031-223-9192"
+  },
+  {
+    "name": "우림본갈비",
+    "representative_menu": "소생왕갈비 / 수제왕돼지갈비",
+    "radius_km": 5.8,
+    "cost_per_person": "약 17,000~30,000원",
+    "phone": "031-243-0539"
+  }
+]
