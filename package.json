@@ -1,8 +1,7 @@
 {
-  "name": "suwon-restaurant-app",
-  "version": "1.0.0",
+  "name": "group-restaurant-search",
+  "version": "4.0.0",
   "private": true,
-  "description": "Password-protected Suwon Station group restaurant directory for Render",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

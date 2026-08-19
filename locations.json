@@ -1,0 +1,16 @@
+[
+  {
+    "id": "suwon_station",
+    "name": "수원역",
+    "address": "경기도 수원시 팔달구 덕영대로 924",
+    "latitude": 37.2656,
+    "longitude": 127.0002
+  },
+  {
+    "id": "sk_hynix_icheon",
+    "name": "SK하이닉스 이천 본사",
+    "address": "경기도 이천시 부발읍 경충대로 2091",
+    "latitude": 37.2529797,
+    "longitude": 127.4806853
+  }
+]

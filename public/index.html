@@ -1,217 +1,232 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>수원역 단체 식당 검색</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>단체 식당 검색</title>
   <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #f4f6f8;
-      color: #202124;
-      font-family: Arial, "Noto Sans KR", sans-serif;
-    }
-    .container { width: min(1180px, 92%); margin: 36px auto; }
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
-    h1 { margin: 0; font-size: 28px; }
-    .subtitle { margin: 6px 0 0; color: #666; }
-    .logout {
-      border: 1px solid #ccc;
-      background: white;
-      padding: 10px 16px;
-      border-radius: 9px;
-      cursor: pointer;
-    }
-    .search-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr auto;
-      gap: 12px;
-      align-items: end;
-      padding: 20px;
-      background: white;
-      border-radius: 16px;
-      margin-bottom: 20px;
-    }
-    label { display: block; margin-bottom: 7px; font-size: 14px; font-weight: 700; }
-    input, select {
-      width: 100%;
-      height: 44px;
-      border: 1px solid #ccc;
-      border-radius: 9px;
-      padding: 0 12px;
-      font-size: 15px;
-      background: white;
-    }
-    .search-btn {
-      height: 44px;
-      border: 0;
-      border-radius: 9px;
-      padding: 0 24px;
-      background: #202124;
-      color: white;
-      cursor: pointer;
-    }
-    .meta {
-      margin-bottom: 12px;
-      color: #666;
-      font-size: 14px;
-    }
-    .table-wrap {
-      overflow-x: auto;
-      background: white;
-      border-radius: 16px;
-    }
-    table { width: 100%; min-width: 820px; border-collapse: collapse; }
-    th, td { padding: 14px; border-bottom: 1px solid #eee; text-align: left; font-size: 14px; }
-    th { background: #fafafa; }
-    .name { font-weight: 700; }
-    .phone a { color: inherit; }
-    .empty { padding: 30px; text-align: center; color: #777; }
-    @media (max-width: 720px) {
-      .topbar { align-items: flex-start; }
-      .search-box { grid-template-columns: 1fr; }
-      .search-btn { width: 100%; }
-    }
+    *{box-sizing:border-box}
+    body{margin:0;background:#f4f6f8;color:#222;font-family:Arial,"Noto Sans KR",sans-serif}
+    .wrap{width:min(1180px,92%);margin:34px auto}
+    .header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:20px}
+    h1{margin:0;font-size:28px}.subtitle{color:#666;margin:6px 0 0}
+    .logout{border:1px solid #ccc;background:#fff;padding:10px 16px;border-radius:8px;cursor:pointer}
+    .controls{display:grid;grid-template-columns:2fr 1fr auto;gap:12px;align-items:end;background:#fff;padding:20px;border-radius:14px}
+    label{display:block;margin-bottom:7px;font-weight:700;font-size:14px}
+    select,button{height:44px;font-size:15px}
+    select{width:100%;border:1px solid #ccc;border-radius:8px;padding:0 12px;background:#fff}
+    .search{border:0;background:#222;color:#fff;border-radius:8px;padding:0 24px;cursor:pointer}
+    .small{color:#666;font-size:13px}.location-info{margin-top:7px}.meta{margin:14px 0}
+    .table-wrap{overflow-x:auto;background:#fff;border-radius:14px}
+    table{width:100%;min-width:900px;border-collapse:collapse}
+    th,td{padding:14px;border-bottom:1px solid #eee;text-align:left;font-size:14px}
+    th{background:#fafafa}.name{font-weight:700}
+    .badge{display:inline-block;padding:3px 7px;border-radius:999px;background:#eee;font-size:12px}
+    .empty{padding:32px;text-align:center;color:#777}
+    @media(max-width:720px){.controls{grid-template-columns:1fr}.search{width:100%}}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header class="topbar">
-      <div>
-        <h1>수원역 단체 식당 검색</h1>
-        <p class="subtitle">10인 이상 예약 가능한 식당 1차 데이터</p>
-      </div>
-      <button class="logout" id="logoutBtn" type="button">로그아웃</button>
-    </header>
-
-    <section class="search-box">
-      <div>
-        <label for="location">기준 장소</label>
-        <input id="location" value="수원역" disabled />
-      </div>
-
-      <div>
-        <label for="radius">반경</label>
-        <select id="radius">
-          <option value="1">1 km</option>
-          <option value="3">3 km</option>
-          <option value="5">5 km</option>
-          <option value="10" selected>10 km</option>
-        </select>
-      </div>
-
-      <button class="search-btn" id="searchBtn" type="button">검색</button>
-    </section>
-
-    <div class="meta" id="meta">데이터를 불러오는 중...</div>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>음식점 이름</th>
-            <th>대표메뉴</th>
-            <th>수원역 기준 거리</th>
-            <th>인당 비용</th>
-            <th>전화번호</th>
-          </tr>
-        </thead>
-        <tbody id="restaurantBody"></tbody>
-      </table>
-      <div id="empty" class="empty" hidden>조건에 맞는 식당이 없습니다.</div>
+<main class="wrap">
+  <div class="header">
+    <div>
+      <h1>단체 식당 검색</h1>
+      <p class="subtitle">식당 좌표가 있으면 실제 직선거리를 자동 계산합니다.</p>
     </div>
+    <button class="logout" id="logoutBtn">로그아웃</button>
   </div>
 
-  <script>
-    let restaurants = [];
-    let updatedAt = "";
+  <section class="controls">
+    <div>
+      <label for="location">기준 장소</label>
+      <select id="location"></select>
+      <div id="locationInfo" class="small location-info"></div>
+    </div>
+    <div>
+      <label for="radius">반경</label>
+      <select id="radius">
+        <option value="1">1 km</option>
+        <option value="3">3 km</option>
+        <option value="5">5 km</option>
+        <option value="10" selected>10 km</option>
+      </select>
+    </div>
+    <button class="search" id="searchBtn">검색</button>
+  </section>
 
-    const body = document.getElementById("restaurantBody");
-    const empty = document.getElementById("empty");
-    const meta = document.getElementById("meta");
-    const radiusSelect = document.getElementById("radius");
+  <div id="meta" class="small meta">데이터를 불러오는 중...</div>
 
-    function render() {
-      const radius = Number(radiusSelect.value);
-      const filtered = restaurants
-        .filter((restaurant) => restaurant.radius_km <= radius)
-        .sort((a, b) => a.radius_km - b.radius_km);
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>순위</th>
+          <th>음식점 이름</th>
+          <th>대표메뉴</th>
+          <th>거리</th>
+          <th>인당 비용</th>
+          <th>전화번호</th>
+          <th>거리 기준</th>
+        </tr>
+      </thead>
+      <tbody id="restaurantBody"></tbody>
+    </table>
+    <div id="empty" class="empty" hidden>조건에 맞는 식당이 없습니다.</div>
+  </div>
+</main>
 
-      body.innerHTML = "";
+<script>
+let locations = [];
+let restaurants = [];
+let updatedAt = "";
 
-      for (const restaurant of filtered) {
-        const row = document.createElement("tr");
+const locationSelect = document.getElementById("location");
+const radiusSelect = document.getElementById("radius");
+const restaurantBody = document.getElementById("restaurantBody");
+const locationInfo = document.getElementById("locationInfo");
+const meta = document.getElementById("meta");
+const empty = document.getElementById("empty");
 
-        const values = [
-          restaurant.name,
-          restaurant.representative_menu,
-          `${restaurant.radius_km} km`,
-          restaurant.cost_per_person,
-          restaurant.phone
-        ];
+// Haversine formula: latitude/longitude -> straight-line distance in km
+function haversineKm(lat1, lon1, lat2, lon2) {
+  const R = 6371.0088;
+  const toRad = deg => deg * Math.PI / 180;
 
-        values.forEach((value, index) => {
-          const cell = document.createElement("td");
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
 
-          if (index === 0) cell.className = "name";
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) *
+    Math.cos(toRad(lat2)) *
+    Math.sin(dLon / 2) ** 2;
 
-          if (index === 4) {
-            cell.className = "phone";
-            const link = document.createElement("a");
-            link.href = `tel:${restaurant.phone.replace(/[^0-9+]/g, "")}`;
-            link.textContent = value;
-            cell.appendChild(link);
-          } else {
-            cell.textContent = value;
-          }
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
 
-          row.appendChild(cell);
-        });
+function getDistance(restaurant, location) {
+  const hasCoords =
+    Number.isFinite(Number(restaurant.latitude)) &&
+    Number.isFinite(Number(restaurant.longitude));
 
-        body.appendChild(row);
-      }
+  if (hasCoords) {
+    return {
+      km: haversineKm(
+        Number(location.latitude),
+        Number(location.longitude),
+        Number(restaurant.latitude),
+        Number(restaurant.longitude)
+      ),
+      source: "좌표 자동계산"
+    };
+  }
 
-      empty.hidden = filtered.length !== 0;
-      meta.textContent =
-        `반경 ${radius}km · ${filtered.length}곳 표시 · 데이터 기준일 ${updatedAt || "-"}`;
-    }
+  // Temporary compatibility with v3 records while coordinates are being verified.
+  if (
+    restaurant.location_id === location.id &&
+    Number.isFinite(Number(restaurant.legacy_distance_km))
+  ) {
+    return {
+      km: Number(restaurant.legacy_distance_km),
+      source: "기존 조사값"
+    };
+  }
 
-    async function loadRestaurants() {
-      try {
-        const response = await fetch("/api/restaurants");
+  return null;
+}
 
-        if (response.status === 401) {
-          window.location.href = "/";
-          return;
-        }
+function render() {
+  const selected = locations.find(x => x.id === locationSelect.value);
+  const radius = Number(radiusSelect.value);
 
-        const data = await response.json();
+  if (!selected) return;
 
-        if (!data.success) throw new Error(data.message);
+  const rows = restaurants
+    .map(r => {
+      const distance = getDistance(r, selected);
+      return distance ? { ...r, computedDistance: distance.km, distanceSource: distance.source } : null;
+    })
+    .filter(Boolean)
+    .filter(r => r.computedDistance <= radius)
+    .sort((a, b) => a.computedDistance - b.computedDistance);
 
-        restaurants = data.restaurants;
-        updatedAt = data.updated_at;
-        render();
-      } catch (error) {
-        meta.textContent = "식당 데이터를 불러오지 못했습니다.";
-      }
-    }
+  restaurantBody.innerHTML = "";
 
-    document.getElementById("searchBtn").addEventListener("click", render);
+  rows.forEach((r, index) => {
+    const tr = document.createElement("tr");
+    const values = [
+      index + 1,
+      r.name,
+      r.representative_menu,
+      `${r.computedDistance.toFixed(2)} km`,
+      r.cost_per_person,
+      r.phone
+    ];
 
-    document.getElementById("logoutBtn").addEventListener("click", async () => {
-      await fetch("/logout", { method: "POST" });
-      window.location.href = "/";
+    values.forEach((value, idx) => {
+      const td = document.createElement("td");
+      if (idx === 1) td.className = "name";
+      td.textContent = value;
+      tr.appendChild(td);
     });
 
-    loadRestaurants();
-  </script>
+    const source = document.createElement("td");
+    const badge = document.createElement("span");
+    badge.className = "badge";
+    badge.textContent = r.distanceSource;
+    source.appendChild(badge);
+    tr.appendChild(source);
+
+    restaurantBody.appendChild(tr);
+  });
+
+  locationInfo.textContent =
+    `${selected.address} · ${selected.latitude}, ${selected.longitude}`;
+
+  const verifiedCount = restaurants.filter(r =>
+    Number.isFinite(Number(r.latitude)) &&
+    Number.isFinite(Number(r.longitude))
+  ).length;
+
+  meta.textContent =
+    `${selected.name} · 반경 ${radius}km · ${rows.length}곳 표시 · ` +
+    `좌표 검증 ${verifiedCount}/${restaurants.length}곳 · 데이터 기준일 ${updatedAt}`;
+
+  empty.hidden = rows.length !== 0;
+}
+
+async function loadData() {
+  const response = await fetch("/api/data");
+  if (response.status === 401) {
+    location.href = "/";
+    return;
+  }
+
+  const data = await response.json();
+  locations = data.locations;
+  restaurants = data.restaurants;
+  updatedAt = data.updated_at;
+
+  locations.forEach(location => {
+    const option = document.createElement("option");
+    option.value = location.id;
+    option.textContent = location.name;
+    locationSelect.appendChild(option);
+  });
+
+  render();
+}
+
+document.getElementById("searchBtn").addEventListener("click", render);
+locationSelect.addEventListener("change", render);
+radiusSelect.addEventListener("change", render);
+
+document.getElementById("logoutBtn").addEventListener("click", async () => {
+  await fetch("/logout", { method: "POST" });
+  location.href = "/";
+});
+
+loadData();
+</script>
 </body>
 </html>
