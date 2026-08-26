@@ -9,17 +9,21 @@ const PORT = process.env.PORT || 3000;
 app.set("trust proxy", 1);
 app.use(express.json());
 
-app.use(cookieSession({
-  name: "restaurant_session",
-  keys: [process.env.SESSION_SECRET || "development-only-secret"],
-  maxAge: 1000 * 60 * 60 * 24 * 7,
-  httpOnly: true,
-  sameSite: "lax",
-  secure: process.env.NODE_ENV === "production"
-}));
+app.use(
+  cookieSession({
+    name: "restaurant_session",
+    keys: [process.env.SESSION_SECRET || "development-only-secret"],
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+    httpOnly: true,
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production"
+  })
+);
 
 function requireLogin(req, res, next) {
-  if (req.session && req.session.loggedIn === true) return next();
+  if (req.session && req.session.loggedIn === true) {
+    return next();
+  }
 
   if (req.path.startsWith("/api/")) {
     return res.status(401).json({
@@ -36,7 +40,9 @@ app.get("/", (req, res) => {
     return res.redirect("/restaurants");
   }
 
-  return res.sendFile(path.join(__dirname, "public", "login.html"));
+  return res.sendFile(
+    path.join(__dirname, "public", "login.html")
+  );
 });
 
 app.post("/login", (req, res) => {
@@ -44,7 +50,10 @@ app.post("/login", (req, res) => {
 
   if (password === process.env.SITE_PASSWORD) {
     req.session.loggedIn = true;
-    return res.json({ success: true });
+
+    return res.json({
+      success: true
+    });
   }
 
   return res.status(401).json({
@@ -54,25 +63,49 @@ app.post("/login", (req, res) => {
 });
 
 app.get("/restaurants", requireLogin, (req, res) => {
-  return res.sendFile(path.join(__dirname, "public", "index.html"));
+  return res.sendFile(
+    path.join(__dirname, "public", "index.html")
+  );
 });
 
 app.get("/api/data", requireLogin, (req, res) => {
   try {
-    const locations = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "locations.json"), "utf8")
-    );
+    const locationsPath =
+      path.join(__dirname, "locations.json");
 
-    const restaurants = JSON.parse(
-      fs.readFileSync(path.join(__dirname, "restaurants.json"), "utf8")
-    );
+    const restaurantsPath =
+      path.join(__dirname, "restaurants.json");
+
+    const locations =
+      JSON.parse(
+        fs.readFileSync(locationsPath, "utf8")
+      );
+
+    const restaurants =
+      JSON.parse(
+        fs.readFileSync(restaurantsPath, "utf8")
+      );
+
+    // restaurants.json 파일의 마지막 수정시간을 가져옴
+    const restaurantFileStat =
+      fs.statSync(restaurantsPath);
+
+    const modifiedDate =
+      restaurantFileStat.mtime;
+
+    // YYYY-MM-DD 형태로 변환
+    const updatedAt =
+      modifiedDate
+        .toISOString()
+        .slice(0, 10);
 
     return res.json({
       success: true,
-      updated_at: "2026-08-19",
+      updated_at: updatedAt,
       locations,
       restaurants
     });
+
   } catch (error) {
     console.error(error);
 
@@ -85,11 +118,20 @@ app.get("/api/data", requireLogin, (req, res) => {
 
 app.post("/logout", (req, res) => {
   req.session = null;
-  return res.json({ success: true });
+
+  return res.json({
+    success: true
+  });
 });
 
-app.get("/health", (req, res) => res.status(200).send("OK"));
+app.get("/health", (req, res) => {
+  return res
+    .status(200)
+    .send("OK");
+});
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(
+    `Server running on port ${PORT}`
+  );
 });
